@@ -107,6 +107,22 @@ http://localhost:3000
 ```
 
 ---
+---
+
+## 🧪 Postman Collection (API Demo)
+
+You can test all API endpoints using the shared **Postman collection**:
+
+🔗 **Postman Collection Link**  
+https://impedance-5154775.postman.co/workspace/Impedance's-Workspace~0dd529df-c687-4830-88d0-6d32b88c6c52/collection/46353239-771646eb-dfb5-47bc-9bb7-be6751d18e41?action=share&creator=46353239
+
+### How to Use
+1. Open the link in a browser
+2. Click  **“Import”** in Postman
+3. Start the server:
+   ```bash
+   node server.js
+
 
 ## 🔌 API Endpoints
 
