@@ -14,6 +14,7 @@ A **beginner-friendly backend project** that implements a **deterministic load b
 * Request logging
 * Rate limiting per IP
 * Optional Express API for demo via Postman
+* **Nodemon for auto-reload during development**
 
 ---
 
@@ -77,51 +78,86 @@ node -v
 npm -v
 ```
 
+---
+
 ### 2️⃣ Install Dependencies
 
 ```bash
-npm install express
+npm install
 ```
 
-(Express is required only for API usage.)
+This installs:
+
+* `express` (for REST API)
+* `nodemon` (for development auto-reload)
+
+> Nodemon is added as a **dev dependency**.
 
 ---
 
+## ▶️ Running the Project
 
+### 🔹 Run with Nodemon (Recommended for Development)
+
+```bash
+npx nodemon server.js
+```
+
+OR using npm scripts (recommended):
+
+```bash
+npm run dev
+```
 
 ---
 
-##  Run as REST API 
-
-### Start Server
+### 🔹 Run Normally (Without Nodemon)
 
 ```bash
 node server.js
 ```
 
-Server will run at:
+---
+
+## 📦 package.json (Relevant Scripts)
+
+```json
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
+```
+
+---
+
+## 🌐 Server Details
+
+When running, the server starts at:
 
 ```
 http://localhost:3000
 ```
 
 ---
----
 
 ## 🧪 Postman Collection (API Demo)
 
 You can test all API endpoints using the shared **Postman collection**:
 
-🔗 **Postman Collection Link**  
-https://impedance-5154775.postman.co/workspace/Impedance's-Workspace~0dd529df-c687-4830-88d0-6d32b88c6c52/collection/46353239-771646eb-dfb5-47bc-9bb7-be6751d18e41?action=share&creator=46353239
+🔗 **Postman Collection Link**
+[https://impedance-5154775.postman.co/workspace/Impedance's-Workspace~0dd529df-c687-4830-88d0-6d32b88c6c52/collection/46353239-771646eb-dfb5-47bc-9bb7-be6751d18e41?action=share&creator=46353239](https://impedance-5154775.postman.co/workspace/Impedance's-Workspace~0dd529df-c687-4830-88d0-6d32b88c6c52/collection/46353239-771646eb-dfb5-47bc-9bb7-be6751d18e41?action=share&creator=46353239)
 
 ### How to Use
-1. Open the link in a browser
-2. Click  **“Import”** in Postman
-3. Start the server:
-   ```bash
-   node server.js
 
+1. Open the link in a browser
+2. Click **Import** in Postman
+3. Start the server:
+
+   ```bash
+   npm run dev
+   ```
+
+---
 
 ## 🔌 API Endpoints
 
@@ -179,13 +215,17 @@ Send the same IP multiple times:
 { "ip": "8.8.8.8" }
 ```
 
+---
+
 ### Test Rate Limiting
 
 Send the same IP more than 5 times quickly:
 
 ```text
- Rate limit exceeded
+Rate limit exceeded
 ```
+
+---
 
 ### Simulate Node Failure
 
@@ -197,4 +237,14 @@ nodeHealth["Node-B"] = false;
 
 Node-B will stop receiving traffic.
 
+---
 
+## ✅ Why Nodemon?
+
+* Automatically restarts the server on file changes
+* Faster development cycle
+* No need to stop/start the server manually
+
+---
+
+🚀 **This setup now supports both production (`node`) and development (`nodemon`) workflows.**
