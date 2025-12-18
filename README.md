@@ -12,7 +12,6 @@ A **beginner-friendly backend project** that implements a **deterministic load b
 * Health-aware routing with fallback
 * Weighted routing (prioritize stronger nodes)
 * Request logging
-* Simple metrics dashboard
 * Rate limiting per IP
 * Optional Express API for demo via Postman
 
@@ -92,7 +91,7 @@ npm install express
 
 ---
 
-##  Run as REST API (Optional)
+##  Run as REST API 
 
 ### Start Server
 
